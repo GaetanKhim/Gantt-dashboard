@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+ <body style="font-family:arial, sans-serif">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <h1>{{header1}}</h1>
+    <div>{{description1}}</div>
+    <div id="chart1" class="chart" data-aos= "fade-right"></div>
+  
+    <h1>{{header2}}</h1>
+    <div>{{description2}}</div>
+    <div id= "chart2" class="chart" data-aos= "fade-left"></div>
+
+    <h1>{{header3}}</h1>
+    <div>{{description3}}</div>
+    <div id= "chart3" class="chart" data-aos = "fade-right"></div>
+
+    <h1>{{header4}}</h1>
+    <div>{{description4}}</div>
+    <div id= "chart4" class="chart" data-aos = "fade-left"></div>
+
+    <h1>{{header5}}</h1>
+    <div>{{description5}}</div>
+    <div id= "chart5" class="chart" data-aos = "fade-right"></div>
+
+    <h4><a href="/">Return to index page</h4>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 400,
+      duration: 1000,
+    });
+  </script>
+  
+</body>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>-->
+<script type='text/javascript'>
+  var graphs1 = {{graph1JSON | safe}};
+  Plotly.plot("chart1",graphs1,{});
+
+  var graphs2 = {{graph2JSON | safe}};
+  Plotly.plot("chart2", graphs2, {});
+
+  var graphs3 = {{graph3JSON | safe}};
+  Plotly.plot("chart3", graphs3, {});
+
+  var graphs4 = {{graph4JSON | safe}};
+  Plotly.plot("chart4", graphs4, {});
+
+  var graphs5 = {{graph5JSON | safe}};
+  Plotly.plot("chart5", graphs5, {});
+
+</script></html>
